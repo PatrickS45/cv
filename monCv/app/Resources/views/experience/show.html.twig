@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Experience</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ experience.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ experience.nom }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ experience.image }}</td>
+            </tr>
+            <tr>
+                <th>Theme</th>
+                <td>{{ experience.theme }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('experience_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('experience_edit', { 'id': experience.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
